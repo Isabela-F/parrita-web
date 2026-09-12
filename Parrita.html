@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Paradise in Parrita | Costa Rica Property Connections</title>
+
+<style>
+:root{
+  --olive:#66704a;
+  --dark:#263126;
+  --cream:#f4f0e6;
+  --sand:#d8cfb8;
+  --white:#ffffff;
+  --gold:#b59b62;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Georgia, "Times New Roman", serif;
+  background:var(--cream);
+  color:var(--dark);
+  line-height:1.7;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+.hero{
+  min-height:88vh;
+  background:
+    linear-gradient(rgba(20,30,20,.42),rgba(20,30,20,.62)),
+    url("https://s3.amazonaws.com/propertybase-clients/00Dd0000000donbEAA/a0CRN00006IT3wp/8o1eebxlj/midres/DJI_0321.jpg")
+    center/cover;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:white;
+  padding:30px;
+}
+
+.hero-content{
+  max-width:900px;
+}
+
+.eyebrow{
+  letter-spacing:5px;
+  text-transform:uppercase;
+  font-size:13px;
+  margin-bottom:18px;
+}
+
+h1{
+  font-size:clamp(45px,8vw,90px);
+  line-height:1;
+  font-weight:400;
+  margin-bottom:20px;
+}
+
+.subtitle{
+  font-size:22px;
+  letter-spacing:2px;
+  margin-bottom:30px;
+}
+
+.location{
+  font-size:16px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+}
+
+.buttons{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:14px;
+  margin-top:35px;
+}
+
+.button{
+  display:inline-block;
+  padding:14px 25px;
+  border-radius:3px;
+  font-family:Arial,sans-serif;
+  font-size:14px;
+  font-weight:bold;
+  letter-spacing:.5px;
+  transition:.2s;
+}
+
+.button:hover{
+  transform:translateY(-2px);
+}
+
+.primary{
+  background:#66704a;
+  color:white;
+}
+
+.secondary{
+  background:white;
+  color:#263126;
+}
+
+.section{
+  max-width:1150px;
+  margin:auto;
+  padding:80px 25px;
+}
+
+.intro{
+  text-align:center;
+  max-width:800px;
+  margin:auto;
+}
+
+.kicker{
+  color:var(--olive);
+  letter-spacing:4px;
+  text-transform:uppercase;
+  font-family:Arial,sans-serif;
+  font-size:12px;
+  font-weight:bold;
+  margin-bottom:12px;
+}
+
+h2{
+  font-size:42px;
+  font-weight:400;
+  margin-bottom:25px;
+}
+
+.intro p{
+  font-size:18px;
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  margin-top:55px;
+  border-top:1px solid #c8c1ad;
+  border-bottom:1px solid #c8c1ad;
+}
+
+.stat{
+  text-align:center;
+  padding:30px 10px;
+  border-right:1px solid #c8c1ad;
+}
+
+.stat:last-child{
+  border-right:none;
+}
+
+.stat strong{
+  display:block;
+  font-size:31px;
+  color:var(--olive);
+  font-weight:400;
+}
+
+.stat span{
+  font-family:Arial,sans-serif;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  font-size:11px;
+}
+
+.two-column{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+
+.feature-image{
+  width:100%;
+  height:520px;
+  object-fit:cover;
+}
+
+.feature-text h2{
+  margin-bottom:20px;
+}
+
+.feature-text p{
+  margin-bottom:18px;
+}
+
+.features{
+  list-style:none;
+  margin-top:25px;
+  font-family:Arial,sans-serif;
+}
+
+.features li{
+  padding:10px 0;
+  border-bottom:1px solid #d2cbb9;
+}
+
+.features li::before{
+  content:"✦";
+  color:var(--olive);
+  margin-right:10px;
+}
+
+.gallery-section{
+  background:#293329;
+  color:white;
+}
+
+.gallery-section .kicker{
+  color:#c7b77f;
+}
+
+.gallery-section h2{
+  color:white;
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin-top:40px;
+}
+
+.gallery img{
+  width:100%;
+  height:270px;
+  object-fit:cover;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.gallery img:hover{
+  opacity:.8;
+  transform:scale(1.01);
+}
+
+.contact{
+  background:var(--olive);
+  color:white;
+  text-align:center;
+}
+
+.contact h2{
+  color:white;
+}
+
+.contact p{
+  max-width:650px;
+  margin:0 auto 25px;
+}
+
+.contact-info{
+  font-family:Arial,sans-serif;
+  margin:25px 0;
+  font-size:17px;
+}
+
+.languages{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  margin-top:50px;
+}
+
+.language-box{
+  background:white;
+  padding:35px;
+}
+
+.language-box h3{
+  color:var(--olive);
+  font-size:24px;
+  margin-bottom:15px;
+}
+
+.disclaimer{
+  background:#202820;
+  color:#cfcfc7;
+  text-align:center;
+  padding:35px 20px;
+  font-family:Arial,sans-serif;
+  font-size:12px;
+  line-height:1.7;
+}
+
+footer{
+  background:#161b16;
+  color:#aaa;
+  text-align:center;
+  padding:20px;
+  font-family:Arial,sans-serif;
+  font-size:11px;
+}
+
+@media(max-width:800px){
+
+  .stats{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .stat:nth-child(2){
+    border-right:none;
+  }
+
+  .two-column{
+    grid-template-columns:1fr;
+    gap:35px;
+  }
+
+  .languages{
+    grid-template-columns:1fr;
+  }
+
+  .gallery{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .gallery img{
+    height:200px;
+  }
+}
+
+@media(max-width:500px){
+
+  .hero{
+    min-height:78vh;
+  }
+
+  h2{
+    font-size:34px;
+  }
+
+  .gallery{
+    grid-template-columns:1fr;
+  }
+
+  .gallery img{
+    height:260px;
+  }
+
+  .stats{
+    grid-template-columns:1fr 1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="eyebrow">
+Costa Rica Property Connections
+</div>
+
+<h1>Paradise in Parrita</h1>
+
+<div class="subtitle">
+A Private Nature Retreat in Costa Rica
+</div>
+
+<div class="location">
+Puntarenas · Costa Rica
+</div>
+
+<div class="buttons">
+
+  <!-- Botón WhatsApp (puedes dejarlo en secondary si quieres que se vea igual que los demás) -->
+  <a class="button secondary"
+     href="https://wa.me/447393804012?text=Hello%20Evertt%2C%20I%E2%80%99m%20interested%20in%20the%20Parrita%20property%20in%20Costa%20Rica.%20Please%20send%20me%20more%20information."
+     target="_blank">
+     WhatsApp Evertt
+  </a>
+
+  <!-- Botón Gmail corregido -->
+  <a class="button secondary"
+     href="https://mail.google.com/mail/?view=cm&fs=1&to=garciasdelcompanieslc@gmail.com&su=Parrita%20Property%20Inquiry&body=Hola%20Evertt,%20estoy%20interesado%20en%20la%20propiedad%20de%20Parrita.%20Por%20favor%20envíeme%20más%20información."
+     target="_blank">
+     Enviar correo electrónico a Evertt
+  </a>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- INTRO -->
+
+<section class="section">
+
+<div class="intro">
+
+<div class="kicker">The Property</div>
+
+<h2>A Rare Costa Rican Retreat</h2>
+
+<p>
+Discover an exceptional 1.45-acre private retreat surrounded by
+lush tropical nature in Parrita, Puntarenas. This furnished home
+offers generous indoor and outdoor living spaces, multiple bedrooms,
+a huge wraparound deck and the possibility of creating a private
+family estate, eco-retreat, wellness center or vacation property.
+</p>
+
+</div>
+
+
+<div class="stats">
+
+<div class="stat">
+<strong>5</strong>
+<span>Bedrooms</span>
+</div>
+
+<div class="stat">
+<strong>5</strong>
+<span>Bathrooms</span>
+</div>
+
+<div class="stat">
+<strong>1.45</strong>
+<span>Acres</span>
+</div>
+
+<div class="stat">
+<strong>6,006</strong>
+<span>Sq. Ft.</span>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PROPERTY -->
+
+<section class="section">
+
+<div class="two-column">
+
+<img class="feature-image"
+src="https://s3.amazonaws.com/propertybase-clients/00Dd0000000donbEAA/a0CRN00006IT3wp/wdcn5ftut/midres/DSC03359.jpg"
+alt="Costa Rica property">
+
+<div class="feature-text">
+
+<div class="kicker">Live surrounded by nature</div>
+
+<h2>Your Own Tropical Sanctuary</h2>
+
+<p>
+The property combines comfortable living with the feeling of
+being immersed in Costa Rica's tropical landscape.
+</p>
+
+<p>
+The home features dramatic 30-foot wood-beamed ceilings,
+an open-concept kitchen and living area, two master suites,
+additional bedrooms downstairs and a large wraparound deck
+perfect for enjoying the surrounding nature.
+</p>
+
+<ul class="features">
+
+<li>Fully furnished</li>
+<li>30-foot wood-beamed ceilings</li>
+<li>Large wraparound deck</li>
+<li>Two master suites</li>
+<li>Open-concept kitchen and living area</li>
+<li>Two-car garage / artist studio</li>
+<li>Laundry room</li>
+<li>Jacuzzi tub for four</li>
+<li>Greenhouses and tropical food forest</li>
+<li>ASADA water and new septic system</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- NATURE -->
+
+<section class="section">
+
+<div class="two-column">
+
+<div class="feature-text">
+
+<div class="kicker">The Land</div>
+
+<h2>A Living Tropical Garden</h2>
+
+<p>
+The property is more than a house. It is surrounded by an
+established tropical environment with fruit trees, plants,
+greenhouses and abundant wildlife.
+</p>
+
+<p>
+The land includes jackfruit, Surinam cherry, sugar apple,
+cacao, coffee, bananas, plantains and herbs.
+</p>
+
+<p>
+Wildlife in the surrounding area can include monkeys, sloths,
+toucans, scarlet macaws, butterflies, coatis and many other
+tropical birds.
+</p>
+
+</div>
+
+<img class="feature-image"
+src="https://s3.amazonaws.com/propertybase-clients/00Dd0000000donbEAA/a0CRN00006IT3wp/tufooeiiz/midres/DJI_0318.jpg"
+alt="Tropical Costa Rica landscape">
+
+</div>
+
+</section>
+
+
+<!-- GALLERY -->
+
+<section class="section gallery-section">
+
+<div class="intro">
+
+<div class="kicker">Gallery</div>
+
+<h2>Explore the Property</h2>
+
+<p>
+A glimpse into this unique Costa Rican retreat.
+</p>
+
+</div>
+
+<div class="gallery">
+
+<img src="https://s3.amazonaws.com/propertybase-clients/00Dd0000000donbEAA/a0CRN00006IT3wp/8o1eebxlj/midres/DJI_0321.jpg">
+<img src="https://s3.amazonaws.com/propertybase-clients/00Dd0000000donbEAA/a0CRN00006IT3wp/wdcn5ftut/midres/DSC03359.jpg">
+<img src="https://s3.amazonaws.com/propertybase-clients/00Dd0000000donbEAA/a0CRN00006IT3wp/2krn60z4b/midres/DSC03362.jpg">
+<img src="https://s3.amazonaws.com/propertybase-clients/00Dd0000000donbEAA/a0CRN00006IT3wp/d3qmgh0s5/midres/DSC03405.jpg">
+<img src="https://s3.amazonaws.com/propertybase-clients/00Dd0000000donbEAA/a0CRN00006IT3wp/ri5r17vwh/midres/DSC03397.jpg">
+<img src="https://s3.amazonaws.com/propertybase-clients/00Dd0000000donbEAA/a0CRN00006IT3wp/t03xjsgud/midres/DSC03367.jpg">
+<img src="https://s3.amazonaws.com/propertybase-clients/00Dd0000000donbEAA/a0CRN00006IT3wp/a9xchikj0/midres/DSC03372.jpg">
+<img src="https://s3.amazonaws.com/propertybase-clients/00Dd0000000donbEAA/a0CRN00006IT3wp/6yr8exc6i/midres/DSC03382.jpg">
+<img src="https://s3.amazonaws.com/propertybase-clients/00Dd0000000donbEAA/a0CRN00006IT3wp/e6pyipu90/midres/DSC03424.jpg">
+<img src="https://s3.amazonaws.com/propertybase-clients/00Dd0000000donbEAA/a0CRN00006IT3wp/j65o13wbe/midres/DSC03434.jpg">
+<img src="https://s3.amazonaws.com/propertybase-clients/00Dd0000000donbEAA/a0CRN00006IT3wp/a0d0obxwd/midres/DSC03438.jpg">
+<img src="https://s3.amazonaws.com/propertybase-clients/00Dd0000000donbEAA/a0CRN00006IT3wp/27uqzxy4c/midres/DJI_0313.jpg">
+<img src="https://s3.amazonaws.com/propertybase-clients/00Dd0000000donbEAA/a0CRN00006IT3wp/sct4rtt0x/midres/DSC03440.jpg">
+<img src="https://s3.amazonaws.com/propertybase-clients/00Dd0000000donbEAA/a0CRN00006IT3wp/dur7s30pj/midres/DSC03445.jpg">
+<img src="https://s3.amazonaws.com/propertybase-clients/00Dd0000000donbEAA/a0CRN00006IT3wp/pqqtnmju1/midres/DSC03450.jpg">
+<img src="https://s3.amazonaws.com/propertybase-clients/00Dd0000000donbEAA/a0CRN00006IT3wp/98jsnaj63/midres/DSC03455.jpg">
+<img src="https://s3.amazonaws.com/propertybase-clients/00Dd0000000donbEAA/a0CRN00006IT3wp/isvfy594o/midres/DSC03460.jpg">
+<img src="https://s3.amazonaws.com/propertybase-clients/00Dd0000000donbEAA/a0CRN00006IT3wp/imtsgs7hh/midres/DSC03465.jpg">
+<img src="https://s3.amazonaws.com/propertybase-clients/00Dd0000000donbEAA/a0CRN00006IT3wp/tufooeiiz/midres/DJI_0318.jpg">
+<img src="https://s3.amazonaws.com/propertybase-clients/00Dd0000000donbEAA/a0CRN00006IT3wp/sq0ds04ye/midres/DJI_0320.jpg">
+<img src="https://s3.amazonaws.com/propertybase-clients/00Dd0000000donbEAA/a0CRN00006IT3wp/99g1yeoby/midres/DJI_0317.jpg">
+<img src="https://s3.amazonaws.com/propertybase-clients/00Dd0000000donbEAA/a0CRN00006IT3wp/g2jf542v6/midres/DSC03358.jpg">
+<img src="https://s3.amazonaws.com/propertybase-clients/00Dd0000000donbEAA/a0CRN00006IT3wp/oxiychhbe/midres/DSC03402.jpg">
+<img src="https://s3.amazonaws.com/propertybase-clients/00Dd0000000donbEAA/a0CRN00006IT3wp/qn5d7ciqx/midres/DJI_0346.jpg">
+
+</div>
+
+</section>
+
+
+<!-- BILINGUAL -->
+
+<section class="section">
+
+<div class="intro">
+
+<div class="kicker">English / Español</div>
+
+<h2>About This Opportunity</h2>
+
+</div>
+
+<div class="languages">
+
+<div class="language-box">
+
+<h3>English</h3>
+
+<p>
+This beautiful property in Parrita, Puntarenas offers a rare
+combination of privacy, tropical nature and generous living space.
+It is suitable for a large family, private retreat, eco-tourism
+project, wellness center or investment opportunity.
+</p>
+
+<p>
+For current price, availability and official listing information,
+please consult the official property listing.
+</p>
+
+</div>
+
+
+<div class="language-box">
+
+<h3>Español</h3>
+
+<p>
+Esta hermosa propiedad en Parrita, Puntarenas ofrece una
+combinación especial de privacidad, naturaleza tropical y amplios
+espacios para vivir.
+</p>
+
+<p>
+Puede ser ideal para una familia grande, retiro privado,
+proyecto de ecoturismo, centro de bienestar o inversión.
+</p>
+
+<p>
+Para conocer el precio, disponibilidad y condiciones actuales,
+consulte la publicación oficial de la propiedad.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="section contact">
+
+<div class="kicker">Private Property Inquiry</div>
+
+<h2>Interested in Paradise?</h2>
+
+<p>
+Contact Evertt directly for additional information, questions,
+photos and help connecting with the appropriate parties regarding
+this property.
+</p>
+
+<div class="contact-info">
+
+<strong>Evertt García</strong><br>
+Costa Rica Property Connections<br><br>
+
+WhatsApp: +44 7393 804012<br>
+Email: garciasdelcompanieslc@gmail.com
+
+</div>
+
+<div class="buttons">
+
+  <!-- Botón WhatsApp (ahora con estilo secondary) -->
+  <a class="button secondary"
+     href="https://wa.me/447393804012?text=Hello%20Evertt%2C%20I%E2%80%99m%20interested%20in%20the%20Parrita%20property%20in%20Costa%20Rica.%20Please%20send%20me%20more%20information."
+     target="_blank">
+     WhatsApp Evertt
+  </a>
+
+  <!-- Botón Gmail -->
+  <a class="button secondary"
+     href="https://mail.google.com/mail/?view=cm&fs=1&to=garciasdelcompanieslc@gmail.com&su=Parrita%20Property%20Inquiry&body=Hola%20Evertt,%20estoy%20interesado%20en%20la%20propiedad%20de%20Parrita.%20Por%20favor%20envíeme%20más%20información."
+     target="_blank">
+     Enviar correo
+  </a>
+
+  <!-- Botón enlace oficial -->
+  <a class="button secondary"
+     href="https://www.coldwellbankercostarica.com/property/5-bed-single-family-homes-for-sale-in-parrita/14354"
+     target="_blank">
+     View Official Listing
+  </a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- DISCLAIMER -->
+
+<section class="disclaimer">
+
+<strong>Important:</strong><br><br>
+
+This is an independent promotional webpage created by
+Evertt García with authorization from the property owner.
+It is not operated by, owned by, or affiliated with
+Coldwell Banker Costa Rica.
+
+The official listing should be consulted for the current
+price, availability, legal information and official listing
+agent details.
+
+Property information is subject to change.
+
+</section>
+
+
+<footer>
+
+© 2026 Evertt García · Costa Rica Property Connections
+
+</footer>
+
+</body>
+</html>
